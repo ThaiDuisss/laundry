@@ -1,4 +1,6 @@
 package com.laundry.entity;
 
-public abstract class AbstractEntity {
+import java.io.Serializable;
+
+public abstract class AbstractEntity<T extends Serializable> implements Serializable {
 }
