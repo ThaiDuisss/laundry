@@ -1,4 +1,4 @@
 package com.laundry.entity;
 
-public class AbstractEntity {
+public abstract class AbstractEntity {
 }
