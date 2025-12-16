@@ -1,0 +1,16 @@
+package com.laundry.service.impl;
+
+import com.laundry.service.BaseRedisService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.data.redis.core.HashOperations;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.stereotype.Service;
+
+@Service
+public class RedisService extends BaseRedisServiceImpl<String, String, Object> {
+    
+    public RedisService(RedisTemplate<String, Object> redisTemplate, 
+                       HashOperations<String, String, Object> hashOperations) {
+        super(redisTemplate, hashOperations);
+    }
+}

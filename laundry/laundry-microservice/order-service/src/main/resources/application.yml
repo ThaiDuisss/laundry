@@ -1,0 +1,21 @@
+server:
+  port: 8083
+
+spring:
+  application:
+    name: order-service
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+config:
+  otp:
+    expiration-minutes: 5
+    length: 6
+    validity: 120
+    max-fail-attempts: 5
+    lock-cycle-minute: 30
+    header-key-cache: OTP-KEY
+    max-otp-resend-a-day: 3

@@ -1,0 +1,16 @@
+server:
+  port: 8085
+
+spring:
+  application:
+    name: support-service
+
+  data:
+    mongodb:
+      uri: mongodb://root:Thai%4013082020@localhost:27817/laundry?authSource=admin
+      auto-index-creation: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/

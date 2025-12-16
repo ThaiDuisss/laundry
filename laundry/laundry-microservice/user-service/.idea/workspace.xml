@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="64558a01-3aed-4c3e-9b44-407ed5766a02" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../auth-service/src/main/java/com/laundry/config/AuthConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../common/src/main/java/com/laundry/controller/BaseController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../common/src/main/java/com/laundry/mapper/BaseMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../common/src/main/java/com/laundry/repository/BaseRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../common/src/main/java/com/laundry/service/BaseService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../common/src/main/java/com/laundry/service/impl/BaseServiceImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api-gateway/src/main/java/com/laundry/config/AuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../api-gateway/src/main/java/com/laundry/config/AuthenticationFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auth-service/src/main/java/com/laundry/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../auth-service/src/main/java/com/laundry/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../common/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../common/src/main/java/com/laundry/Response/ApiErrorResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../common/src/main/java/com/laundry/Response/ApiResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/../common/src/main/java/com/laundry/dto/Response/ApiResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../common/src/main/java/com/laundry/enums/ErrorEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/../common/src/main/java/com/laundry/enums/ErrorEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../common/src/main/java/com/laundry/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../common/src/main/java/com/laundry/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/laundry/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laundry/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/laundry/entity/UserProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laundry/entity/UserProfile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/laundry/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laundry/mapper/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/laundry/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laundry/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/laundry/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laundry/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/laundry/service/imp/UserServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/laundry/service/imp/UserServiceImp.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="32UJUuqCBroDMKXpGbzQZHRvLyz" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "feature/auth",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/Oke/laundry/laundry-microservice/user-service"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="64558a01-3aed-4c3e-9b44-407ed5766a02" name="Changes" comment="" />
+      <created>1757469236960</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1757469236960</updated>
+    </task>
+    <servers />
+  </component>
+</project>

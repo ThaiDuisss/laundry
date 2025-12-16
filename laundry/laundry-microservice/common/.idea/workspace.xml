@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="21929ea7-b0d5-4f90-97e6-8a8c91ac219f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../api-gateway/src/main/java/com/laundry/config/AuthenticationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../api-gateway/src/main/java/com/laundry/service/IdentityService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auth-service/src/main/java/com/laundry/controller/AuthController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auth-service/src/main/java/com/laundry/dto/request/SignInRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auth-service/src/main/java/com/laundry/dto/request/UserProfile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auth-service/src/main/java/com/laundry/dto/request/UserRegister.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auth-service/src/main/java/com/laundry/dto/response/TokenResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auth-service/src/main/java/com/laundry/mapper/UserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auth-service/src/main/java/com/laundry/service/Impl/UserServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../auth-service/src/main/java/com/laundry/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common-model/src/main/java/com/laundry/enums/ErrorEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../user-service/src/main/java/com/laundry/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../user-service/src/main/java/com/laundry/dto/request/UserRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../user-service/src/main/java/com/laundry/dto/response/UserResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../user-service/src/main/java/com/laundry/entity/UserProfile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../user-service/src/main/java/com/laundry/mapper/UserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../user-service/src/main/java/com/laundry/repository/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../user-service/src/main/java/com/laundry/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../user-service/src/main/java/com/laundry/service/imp/UserServiceImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/sonarlint.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/sonarlint.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../api-gateway/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api-gateway/src/main/java/com/laundry/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../api-gateway/src/main/java/com/laundry/ApiGatewayService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api-gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../api-gateway/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auth-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../auth-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auth-service/src/main/java/com/laundry/entity/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/../auth-service/src/main/java/com/laundry/entity/Users.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auth-service/src/main/java/com/laundry/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../auth-service/src/main/java/com/laundry/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auth-service/src/main/java/com/laundry/service/AuthenticationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../auth-service/src/main/java/com/laundry/service/AuthenticationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auth-service/src/main/java/com/laundry/service/Impl/AuthenticationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../auth-service/src/main/java/com/laundry/service/Impl/AuthenticationServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auth-service/src/main/java/com/laundry/service/Impl/JwtServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/../auth-service/src/main/java/com/laundry/service/Impl/JwtServiceImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auth-service/src/main/java/com/laundry/service/JwtService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../auth-service/src/main/java/com/laundry/service/JwtService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-mmodel/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common-model/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-mmodel/src/main/java/com/laundry/dto/ApiErrorResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-model/src/main/java/com/laundry/dto/Response/ApiErrorResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-mmodel/src/main/java/com/laundry/dto/ApiResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-model/src/main/java/com/laundry/dto/Response/ApiResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-mmodel/src/main/java/com/laundry/entity/AbstractEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-model/src/main/java/com/laundry/entity/AbstractEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-mmodel/src/main/java/com/laundry/enums/ErrorEnum.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-mmodel/src/main/java/com/laundry/exception/AppException.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-model/src/main/java/com/laundry/exception/AppException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-mmodel/src/main/java/com/laundry/exception/FieldValidateException.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-model/src/main/java/com/laundry/exception/FieldValidateException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-mmodel/src/main/java/com/laundry/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-model/src/main/java/com/laundry/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../user-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../user-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../user-service/src/main/java/com/laundry/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../user-service/src/main/java/com/laundry/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../user-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../user-service/src/main/resources/application.yml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "ThaiDuisss"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/ThaiDuisss/laundry.git",
+    "accountId": "e5db852b-d40d-4bf7-8bfc-54999582273a"
+  }
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 1
+}]]></component>
+  <component name="ProjectId" id="32UJTM4b3KkqyAbDuIQlT8xZFbP" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "feature/auth",
+    "last_opened_file_path": "D:/Oke/laundry/laundry-microservice/common"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="21929ea7-b0d5-4f90-97e6-8a8c91ac219f" name="Changes" comment="" />
+      <created>1757469224370</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1757469224370</updated>
+    </task>
+    <servers />
+  </component>
+</project>
