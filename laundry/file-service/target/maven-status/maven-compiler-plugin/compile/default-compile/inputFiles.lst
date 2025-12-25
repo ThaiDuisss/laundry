@@ -1,0 +1,10 @@
+D:\Oke\laundry\laundry-microservice\file-service\src\main\java\com\laundry\config\SecurityConfig.java
+D:\Oke\laundry\laundry-microservice\file-service\src\main\java\com\laundry\controller\FileController.java
+D:\Oke\laundry\laundry-microservice\file-service\src\main\java\com\laundry\dto\FileInfo.java
+D:\Oke\laundry\laundry-microservice\file-service\src\main\java\com\laundry\dto\response\FileData.java
+D:\Oke\laundry\laundry-microservice\file-service\src\main\java\com\laundry\entity\File.java
+D:\Oke\laundry\laundry-microservice\file-service\src\main\java\com\laundry\FileApplication.java
+D:\Oke\laundry\laundry-microservice\file-service\src\main\java\com\laundry\mapper\FileMapper.java
+D:\Oke\laundry\laundry-microservice\file-service\src\main\java\com\laundry\repository\FileMgmtRepository.java
+D:\Oke\laundry\laundry-microservice\file-service\src\main\java\com\laundry\repository\FileRepository.java
+D:\Oke\laundry\laundry-microservice\file-service\src\main\java\com\laundry\service\FileService.java

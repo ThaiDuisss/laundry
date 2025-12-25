@@ -1,0 +1,20 @@
+server:
+  port: 8088
+
+spring:
+  data:
+    mongodb:
+      uri: mongodb://root:Thai%4013082020@localhost:27817/laundry?authSource=admin
+      auto-index-creation: true
+  application:
+    name: file-service
+  servlet:
+    multipart:
+      max-file-size: 200MB
+      max-request-size: 200MB
+
+app:
+  file:
+    upload-dir: D:/uploads
+    upload-url: http://localhost:8080/files/media/download/
+

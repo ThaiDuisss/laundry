@@ -1,0 +1,5 @@
+com\laundry\entity\Orders.class
+com\laundry\Main.class
+com\laundry\entity\OrderItems.class
+com\laundry\config\SecurityConfig.class
+com\laundry\repository\UserClient\AuthClient.class

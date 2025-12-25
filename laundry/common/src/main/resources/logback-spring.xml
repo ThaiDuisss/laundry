@@ -1,0 +1,26 @@
+<configuration scan="true">
+
+    <!-- Appender gửi log tới Logstash -->
+    <appender name="LOGSTASH" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
+        <destination>localhost:5000</destination>
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder" />
+    </appender>
+
+    <!-- Appender in ra console (nếu muốn debug local) -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level [%thread] %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+<!--    <logger name="com.laundry.UserService" level="INFO" additivity="false">-->
+<!--        &lt;!&ndash; Chỉ gửi log WARN/ERROR &ndash;&gt;-->
+<!--        <appender-ref ref="STDOUT"/>-->
+<!--    </logger>-->
+
+    <!-- Root logger -->
+    <root level="INFO">
+        <appender-ref ref="STDOUT" />
+        <appender-ref ref="LOGSTASH" />
+    </root>
+</configuration>

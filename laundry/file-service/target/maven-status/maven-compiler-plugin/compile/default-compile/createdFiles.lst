@@ -1,0 +1,13 @@
+com\laundry\entity\File$FileBuilder.class
+com\laundry\controller\FileController.class
+com\laundry\dto\FileInfo.class
+com\laundry\config\SecurityConfig.class
+com\laundry\dto\response\FileData.class
+com\laundry\entity\File.class
+com\laundry\mapper\FileMapper.class
+com\laundry\mapper\FileMapperImpl.class
+com\laundry\FileApplication.class
+com\laundry\repository\FileMgmtRepository.class
+com\laundry\service\FileService.class
+com\laundry\dto\FileInfo$FileInfoBuilder.class
+com\laundry\repository\FileRepository.class
