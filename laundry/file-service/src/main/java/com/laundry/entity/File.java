@@ -23,4 +23,7 @@ public class File {
     Long size;
     String contentType;
     String md5CheckSum;
+
+    public File(long l, String file, String contentType, long l1) {
+    }
 }
