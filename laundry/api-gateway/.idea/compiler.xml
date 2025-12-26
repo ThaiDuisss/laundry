@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="api-gateway" />
+        <module name="product-service" />
         <module name="auth-service" />
         <module name="file-service" />
         <module name="discovery-service" />
@@ -31,6 +32,7 @@
       <module name="common" options="-parameters" />
       <module name="discovery-service" options="-parameters" />
       <module name="file-service" options="-parameters" />
+      <module name="product-service" options="-parameters" />
     </option>
   </component>
 </project>
