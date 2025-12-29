@@ -4,6 +4,44 @@ server:
 spring:
   application:
     name: order-service
+    datasource:
+      url: jdbc:mysql://localhost:3306/order-service
+      username: root
+      password: Thai@11052004
+    jpa:
+      hibernate:
+        ddl-auto: update
+        show-sql: false
+
+    data:
+      redis:
+        host: localhost
+        port: 6379
+        password: Thai@11052004
+        timeout: 60000
+        database: 1
+    cache:
+      type: redis
+
+    kafka:
+      bootstrap-servers: localhost:9092
+      security:
+        protocol: plaintext
+      producer:
+        client-id: laundry-order-service
+        key-serializer: org.apache.kafka.common.serialization.StringSerializer
+        value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+        acks: all
+        retries: 30
+        compression-type: lz4
+        properties:
+          enable.idempotence: true
+          max.in.flight.requests.per.connect: 5
+          spring.json.add.type.header: false
+          partitioner.class: org.apache.kafka.clients.producer.internals.StickyPartitionCache
+        linger-ms: 1
+        batch-size: 16384
+        buffer-memory: 33554432
 
 eureka:
   client:
@@ -12,10 +50,21 @@ eureka:
 
 config:
   otp:
+    private-key: MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCjfywnnsoM5LIZmU+SlNeVkJMFRD5axU8r0nCSOVri/0W89OwKKarYSF5dVU2Zu0iFFh9C1hTGFImdXCcsGUqkG/1vLT0IMap/czMRyGsEtfTWugxfnIr+efpeS4JSPD2/3jE0GJfFVn111rUXrdPeqQiFn5qCFkqjsbcgvJ6WQFRVMoH2laka2sPwg+EmMix9olNjwFui/UhPD5Q7PQ1nwGyJiAyYdpQ4CFarS7bUnv3bzJKcUHzxaewCDX61EXvRlnmIwSEO7qQw5obnyVnlmK7PC5W5yy0OvshRRn2FmIXEwLut/W9DEyaZW5RlZ6rqHgVcGzBn3FnSRIkOLiVTAgMBAAECggEADJgCVoed3bIMtqRqDjWb3j/1gIgvW2jrvnQ7yppTZ2fYFIQzMwc0S0EBJSRUfBKCirSCXPDGRzRpc0Rtb1wACrXDPE9E7ml7o3dECEsiqd663i1qQD/RLw/wmqyApy/6Zln0T/nS+wGSBsPZTYUiFvp4lxO3tZcyUaX3SrTCFyWm3tkd0031AxmE6zgFixiUW3HGxJe90qgeh+dlD7U/tK1EyKZ+RWv1X8otKeXMJLqedyiK7WT+C8+G32OQH+1HntvOIVH59fmU5wBQSNobdWLmaYOm70Luy7J3JlQO/cpTsExxsucH9U52m1xBR4tGblCA7RdqSP3ipnQzrFEYiQKBgQDKMeuOQ+ZfgMYPNLyFJNdLPumFllywWvxnGAIqirDS9wuB0AbZ8w14Nh5glppu3mk4oJKitp8nTWyk/8onzXgJ8IXSNWsPvanhM8iGPaf0BTv5qXs/1+axObjf/Y08x6IaJnUsX3cWW0JwuXC6UpBpAvKDmrJM/IgOrf4qrYFMuQKBgQDPAQWvmLKZ/DKS+RM14ZYjez9qS83az8CnEJDvUVASam/KasT+ntcawKD25ZvezT0fR+ddswCQ1t2+ERdJk5ebvjAR5//80Mn2K1i+7PcY57j0HABeQRFaHoqeaJswrJYR08n9+bTmJ1gFglPxvZ4Qig78gZsXLM9uQlQ02jm0awKBgCo0oWbg5YWp663g5Dkmp4odZ8Fq0Y4+b9FVQZ5/tMlUqCJAui1kfrtJEK44waPC6VPYsMMmO7KIhtUqT5hfW183xbdLTz3J6VwI4yKiXByjuxEyP3fkKVN1KRIYaxL02PF8dZj9lG4mPogpLU63TU2eP+EYuX84d24ZA6UE8qiBAoGBAK0mer4V6Rc6yIb9xx7j0nVda38bZ1anPsu/5Kv6BRNSaq4TPzKIZP9gr4O2LfphDMZ0m8hZqZh90j9hBmyqAz/oB0eDGzI65yR9v578kfgIJEI0he5RWRVbxLGaaG1/f4vr7uL9k16M/GinSlZEOMo24TA/rR3mgqAE5XDMNUZ/AoGAAjXym5idEtyA6YtkUJh3ac9o44x7i4+FMIA7jB+ifwfYGQeU8Ic72epDbazxjMX8RHP5L9lRRH0zbH+YEKNpWG3EzS9xNgUmwN7iexgivuwLV9d5JM/ofCOmcoYYw+UDImPF+jeT9GnFFKEgkg00eDGAsN/YMe4U52ztAt2fGwA=
+    public-key: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAo38sJ57KDOSyGZlPkpTXlZCTBUQ+WsVPK9Jwkjla4v9FvPTsCimq2EheXVVNmbtIhRYfQtYUxhSJnVwnLBlKpBv9by09CDGqf3MzEchrBLX01roMX5yK/nn6XkuCUjw9v94xNBiXxVZ9dda1F63T3qkIhZ+aghZKo7G3ILyelkBUVTKB9pWpGtrD8IPhJjIsfaJTY8Bbov1ITw+UOz0NZ8BsiYgMmHaUOAhWq0u21J7928ySnFB88WnsAg1+tRF70ZZ5iMEhDu6kMOaG58lZ5ZiuzwuVucstDr7IUUZ9hZiFxMC7rf1vQxMmmVuUZWeq6h4FXBswZ9xZ0kSJDi4lUwIDAQAB
+    header-key-cache: OTP-KEY
     expiration-minutes: 5
     length: 6
     validity: 120
     max-fail-attempts: 5
     lock-cycle-minute: 30
-    header-key-cache: OTP-KEY
     max-otp-resend-a-day: 3
+  kafka:
+    partition: 3
+    transaction: duis-wallet-transaction-dev
+    replicationFactor: 1
+
+payos:
+  client-id: 3a398db9-f357-47a4-8b1d-1b9c08c05ff6
+  api-key: a8bee3e6-c826-496c-a8bb-4c9494b8d00e
+  checksum-key: 779cf389af4852340a812c38b32f761d3ac506e62860400296ff21ba94a5fef6
