@@ -1,14 +1,16 @@
-package com.example.kafka_lib.util;
+package com.laundry.utils;
 
 
-import com.example.kafka_lib.constant.EventType;
-import com.example.kafka_lib.dto.KafkaMessage;
-import com.example.kafka_lib.dto.Meta;
+
+
+import com.laundry.dto.DTO.KafkaMessage;
+import com.laundry.dto.DTO.Meta;
+import com.laundry.enums.EventType;
 
 import java.util.UUID;
 
 public class MessageBuilder {
-    public static <T>KafkaMessage<T> build(String serviceId, String messageCode, EventType type, T payload){
+    public static <T> KafkaMessage<T> build(String serviceId, String messageCode, EventType type, T payload){
         KafkaMessage<T> message = new KafkaMessage<>();
         Meta meta = Meta.builder()
                 .messageId(generateMessageId())

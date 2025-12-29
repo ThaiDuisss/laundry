@@ -4,6 +4,44 @@ server:
 spring:
   application:
     name: payment-service
+  kafka:
+    bootstrap-servers: localhost:9092
+    security:
+        protocol: PLAINTEXT
+    consumer:
+      client_id: laundry-payment-service
+      group_id: duis-detector
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      auto-offset-reset: latest
+      properties:
+        spring.json.trusted.packages: "*"
+        spring.json.use.type.headers: false
+        #Khi thêm 1 consumer thay vì reblance để quản lý partitions thì chia từ mỗi consumer sang
+        partition.assignment.strategy: org.apache.kafka.clients.consumer.CooperativeStickyAssignor
+#      listner nhận tối đa 500 message trong poll
+      max-poll-records: 500
+#      thời gian tối đa giữa 2 lần poll
+      max-poll-interval-ms: 15000
+#      thời gian kafka chờ heartbeat trước khi consumer chết
+      session-timeout-ms: 15000
+#      consumer gửi heartbeat bao lâu 1 lần
+      heartbeat-interval-ms: 5000
+#      tắt auto commit
+      enable-auto-commit: false
+#      broker chỉ trả message khi đủ tối thiểu 5kb
+      fetch-min-bytes: 5000
+#      broker đợi tối đa 1s để đủ 5000 bytes mới gửi về
+      fetch-max-wait-ms: 1000
+  listener:
+    concurrency: 6
+    ack-mode: manual_immediate
+  producer:
+    key-serializer: org.apache.kafka.common.serialization.StringSerializer
+    value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    acks: all
+    retries: 30
+
 
 eureka:
   client:
