@@ -64,7 +64,15 @@ config:
     transaction: duis-wallet-transaction-dev
     replicationFactor: 1
 
-payos:
-  client-id: 3a398db9-f357-47a4-8b1d-1b9c08c05ff6
-  api-key: a8bee3e6-c826-496c-a8bb-4c9494b8d00e
-  checksum-key: 779cf389af4852340a812c38b32f761d3ac506e62860400296ff21ba94a5fef6
+resilience4j:
+  circuitbreaker:
+    instances:
+      orderCB:
+        registerHealthIndicator: true
+        slidingWindowType: COUNT_BASED
+        slidingWindowSize: 10
+        minimumNumberOfCalls: 5
+        permittedNumberOfCallsInHalfOpenState: 3
+        waitDurationInOpenState: 10s
+        failureRateThreshold: 50
+        eventConsumerBufferSize: 10

@@ -5,7 +5,6 @@ import lombok.*;
 import lombok.experimental.FieldDefaults;
 import org.hibernate.annotations.Where;
 
-@Entity
 @Getter
 @Setter
 @FieldDefaults(level = AccessLevel.PRIVATE)

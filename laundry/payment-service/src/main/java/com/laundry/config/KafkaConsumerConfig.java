@@ -18,6 +18,9 @@ import org.springframework.kafka.config.KafkaListenerEndpointRegistrar;
 import org.springframework.kafka.core.ConsumerFactory;
 import org.springframework.kafka.core.DefaultKafkaConsumerFactory;
 import org.springframework.kafka.listener.ConcurrentMessageListenerContainer;
+import org.springframework.kafka.listener.ContainerProperties;
+import org.springframework.messaging.handler.annotation.support.DefaultMessageHandlerMethodFactory;
+import org.springframework.messaging.handler.annotation.support.MessageHandlerMethodFactory;
 import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 
 import java.util.Collection;
@@ -91,14 +94,28 @@ public class KafkaConsumerConfig implements KafkaListenerConfigurer {
     }
 
     @Bean
-    public KafkaListenerContainerFactory<ConcurrentMessageListenerContainer<String, Object>> scanNotifyRequestListener() {
+    public KafkaListenerContainerFactory<ConcurrentMessageListenerContainer<String, String>> scanNotifyRequestListener() {
         ConcurrentKafkaListenerContainerFactory<String, String> factory = new ConcurrentKafkaListenerContainerFactory<>();
-
-
+        factory.setConcurrency(concurrency);
+        factory.setBatchListener(true);
+        factory.setConsumerFactory(scanExecNotufyConsumerFactory());
+        factory.getContainerProperties().setAckMode(ContainerProperties.AckMode.MANUAL_IMMEDIATE);
+        factory.getContainerProperties().setGroupId(groupId);
+        factory.getContainerProperties().setClientId(clientId + "_" + System.currentTimeMillis());
+        factory.getContainerProperties().setConsumerRebalanceListener(new CustomerRebalanceListener());
+        return factory;
     }
 
     @Override
     public void configureKafkaListeners(KafkaListenerEndpointRegistrar registrar) {
+        registrar.setMessageHandlerMethodFactory(kafkaHandleMethodFactory());
+    }
+
+    @Bean
+    public MessageHandlerMethodFactory kafkaHandleMethodFactory() {
+        DefaultMessageHandlerMethodFactory factory = new DefaultMessageHandlerMethodFactory();
+        factory.setValidator(validatorFactory);
+        return factory;
     }
 
     @Bean
@@ -108,7 +125,6 @@ public class KafkaConsumerConfig implements KafkaListenerConfigurer {
 
     public static class CustomerRebalanceListener implements ConsumerRebalanceListener{
 
-        @Override
         public void onPartitionsRevoked(Collection<TopicPartition> partitions) {
             log.info("Rebalance Partitions revoked: {}", partitions);
         }

@@ -1,0 +1,53 @@
+version: '3.8'
+
+services:
+  db_mysql:
+    image: mysql:8.0
+    container_name: mysql-container
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: Thai@13082020
+      MYSQL_DATABASE: my_database
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: Thai@13082020
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mysql_data:/var/lib/mysql
+
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb_container
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: thai_admin
+      MONGO_INITDB_ROOT_PASSWORD: thai_password_123
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./mongo_data:/data/db
+
+  redis:
+    image: redis:7.2
+    container_name: my-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    restart: unless-stopped
+
+  oracle-db:
+    image: gvenzl/oracle-xe:21.3.0-full-faststart
+    container_name: oracle-db
+    environment:
+      - ORACLE_PASSWORD=Thai@13082020
+    ports:
+      - "1521:1521"
+      - "5500:5500"
+    volumes:
+      - oracle-data:/opt/oracle/oradata
+    restart: unless-stopped
+
+volumes:
+  redis-data:
+  oracle-data:

@@ -20,7 +20,7 @@ spring:
       uri: mongodb://root:Thai%4013082020@localhost:27817/laundry-notification?authSource=admin
       auto-index-creation: true
   kafka:
-    bootstrap-servers: localhost:9094
+    bootstrap-servers: localhost:9092
     consumer:
       group-id: notification-group
       auto-offset-reset: earliest

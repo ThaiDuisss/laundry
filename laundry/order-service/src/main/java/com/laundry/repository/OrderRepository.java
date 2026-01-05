@@ -1,6 +1,6 @@
 package com.laundry.repository;
 
-import com.example.demo.domain.entity.Orders;
+import com.laundry.entity.Orders;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

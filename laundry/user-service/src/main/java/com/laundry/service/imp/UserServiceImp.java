@@ -7,11 +7,9 @@ import com.laundry.entity.UserProfiles;
 import com.laundry.enums.ErrorEnum;
 import com.laundry.exception.AppException;
 import com.laundry.mapper.UserMapper;
-import com.laundry.Client.AuthClient;
 import com.laundry.repository.UserRepository;
 import com.laundry.service.UserService;
 import com.laundry.service.impl.BaseServiceImp;
-import com.laundry.utils.SecurityUtils;
 import lombok.experimental.FieldDefaults;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -22,7 +20,7 @@ import java.util.List;
 @FieldDefaults(level = lombok.AccessLevel.PRIVATE, makeFinal = true)
 public class UserServiceImp extends BaseServiceImp<UserProfiles, Long, UserProfile, UserResponse, UserMapper, UserRepository> implements UserService {
 FileClient fileClient;
-    public UserServiceImp(UserMapper mapper, UserRepository repository, FileClient fileClient, AuthClient authClient) {
+    public UserServiceImp(UserMapper mapper, UserRepository repository, FileClient fileClient) {
         super(mapper, repository);
         this.fileClient = fileClient;
     }
