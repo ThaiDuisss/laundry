@@ -10,52 +10,52 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2025-10-22T10:54:17+0700",
-    comments = "version: 1.6.3, compiler: javac, environment: Java 17.0.12 (Oracle Corporation)"
+    date = "2026-01-03T15:41:33+0700",
+    comments = "version: 1.5.5.Final, compiler: javac, environment: Java 17.0.17 (Eclipse Adoptium)"
 )
 @Component
 public class UserMapperImpl implements UserMapper {
 
     @Override
-    public UserProfiles toEntity(UserProfile arg0) {
-        if ( arg0 == null ) {
+    public UserProfiles toEntity(UserProfile request) {
+        if ( request == null ) {
             return null;
         }
 
         UserProfiles.UserProfilesBuilder userProfiles = UserProfiles.builder();
 
-        userProfiles.userId( arg0.getUserId() );
-        userProfiles.fullName( arg0.getFullName() );
-        userProfiles.phoneNumber( arg0.getPhoneNumber() );
-        userProfiles.avatar( arg0.getAvatar() );
+        userProfiles.userId( request.getUserId() );
+        userProfiles.fullName( request.getFullName() );
+        userProfiles.phoneNumber( request.getPhoneNumber() );
+        userProfiles.avatar( request.getAvatar() );
 
         return userProfiles.build();
     }
 
     @Override
-    public UserResponse toResponse(UserProfiles arg0) {
-        if ( arg0 == null ) {
+    public UserResponse toResponse(UserProfiles entity) {
+        if ( entity == null ) {
             return null;
         }
 
         UserResponse.UserResponseBuilder userResponse = UserResponse.builder();
 
-        userResponse.userId( arg0.getUserId() );
-        userResponse.fullName( arg0.getFullName() );
-        userResponse.phoneNumber( arg0.getPhoneNumber() );
-        userResponse.avatar( arg0.getAvatar() );
+        userResponse.userId( entity.getUserId() );
+        userResponse.fullName( entity.getFullName() );
+        userResponse.phoneNumber( entity.getPhoneNumber() );
+        userResponse.avatar( entity.getAvatar() );
 
         return userResponse.build();
     }
 
     @Override
-    public List<UserResponse> toResponseList(List<UserProfiles> arg0) {
-        if ( arg0 == null ) {
+    public List<UserResponse> toResponseList(List<UserProfiles> entities) {
+        if ( entities == null ) {
             return null;
         }
 
-        List<UserResponse> list = new ArrayList<UserResponse>( arg0.size() );
-        for ( UserProfiles userProfiles : arg0 ) {
+        List<UserResponse> list = new ArrayList<UserResponse>( entities.size() );
+        for ( UserProfiles userProfiles : entities ) {
             list.add( toResponse( userProfiles ) );
         }
 
@@ -63,15 +63,15 @@ public class UserMapperImpl implements UserMapper {
     }
 
     @Override
-    public void updateEntityFromRequest(UserProfile arg0, UserProfiles arg1) {
-        if ( arg0 == null ) {
+    public void updateEntityFromRequest(UserProfile request, UserProfiles entity) {
+        if ( request == null ) {
             return;
         }
 
-        arg1.setUserId( arg0.getUserId() );
-        arg1.setFullName( arg0.getFullName() );
-        arg1.setPhoneNumber( arg0.getPhoneNumber() );
-        arg1.setAvatar( arg0.getAvatar() );
+        entity.setUserId( request.getUserId() );
+        entity.setFullName( request.getFullName() );
+        entity.setPhoneNumber( request.getPhoneNumber() );
+        entity.setAvatar( request.getAvatar() );
     }
 
     @Override

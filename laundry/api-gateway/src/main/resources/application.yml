@@ -3,14 +3,33 @@ server:
 
 eureka:
   client:
+    fetch-registry: true
+    register-with-eureka: true # Thường Gateway cũng đăng ký chính nó
     service-url:
       defaultZone: http://localhost:8761/eureka/
+    healthcheck:
+      enabled: true
 
 spring:
   main:
     web-application-type: reactive
+  data:
+    redis:
+        host: localhost
+        port: 6379
+#        password: Thai@11052004
+        timeout: 60000
   cloud:
     gateway:
+#      default-filters:
+#        - name: RequestRateLimiter
+#          args:
+#            redis-rate-limiter.replenishRate: 10
+#            redis-rate-limiter.burstCapacity: 20
+#            key-resolver: "#{@ipKeyResolver}"
+      httpclient:
+        connect-timeout: 5000
+        response-timeout: 3s
       discovery:
         locator:
           enabled: true
@@ -18,15 +37,20 @@ spring:
       routes:
         # Auth Service
         - id: auth-service
-          uri: http://localhost:8081
+          uri: lb://auth-service
           predicates:
             - Path=/auth/**, /auth/v3/api-docs
           filters:
             - RewritePath=/auth/(?<segment>.*), /${segment}
+#            - name: RequestRateLimiter
+#              args:
+#                redis-rate-limiter.replenishRate: 5
+#                redis-rate-limiter.burstCapacity: 10
+#                key-resolver: "#{@ipKeyResolver}"
 
         # Notification Service
         - id: notification-service
-          uri: http://localhost:8082
+          uri: lb://notification-service
           predicates:
             - Path=/notifications/**, /notifications/v3/api-docs
           filters:
@@ -34,7 +58,7 @@ spring:
 
         # Order Service
         - id: order-service
-          uri: http://localhost:8083
+          uri: lb://order-service
           predicates:
             - Path=/orders/**, /orders/v3/api-docs
           filters:
@@ -42,7 +66,7 @@ spring:
 
         # Payment Service
         - id: payment-service
-          uri: http://localhost:8084
+          uri: lb://payment-service
           predicates:
             - Path=/payments/**, /payments/v3/api-docs
           filters:
@@ -50,7 +74,7 @@ spring:
 
         # Support Service
         - id: support-service
-          uri: http://localhost:8085
+          uri: lb://support-service
           predicates:
             - Path=/support/**, /support/v3/api-docs
           filters:
@@ -58,7 +82,7 @@ spring:
 
         # User Service
         - id: user-service
-          uri: http://localhost:8086
+          uri: lb://user-service
           predicates:
             - Path=/users/**, /users/v3/api-docs
           filters:
@@ -66,7 +90,7 @@ spring:
 
         # Product Service
         - id: product-service
-          uri: http://localhost:8087
+          uri: lb://product-service
           predicates:
             - Path=/products/**, /products/v3/api-docs
           filters:
@@ -74,7 +98,7 @@ spring:
 
         # Cart Service
         - id: cart-service
-          uri: http://localhost:8888
+          uri: lb://cart-service
           predicates:
             - Path=/cart/**, /cart/v3/api-docs
           filters:
@@ -82,7 +106,7 @@ spring:
 
           # File Service
         - id: file-service
-          uri: http://localhost:8088
+          uri: lb://file-service
           predicates:
             - Path=/files/**, /files/v3/api-docs
           filters:
@@ -109,3 +133,5 @@ springdoc:
         url: /files/v3/api-docs
       - name: cart-service
         url: /cart/v3/api-docs
+
+

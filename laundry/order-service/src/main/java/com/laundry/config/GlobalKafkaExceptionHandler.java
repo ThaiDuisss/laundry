@@ -1,8 +1,8 @@
 package com.laundry.config;
 
+import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.clients.consumer.Consumer;
-import org.jetbrains.annotations.NotNull;
 import org.springframework.kafka.listener.ConsumerAwareListenerErrorHandler;
 import org.springframework.kafka.listener.ListenerExecutionFailedException;
 import org.springframework.kafka.support.Acknowledgment;
@@ -22,9 +22,9 @@ public class GlobalKafkaExceptionHandler implements ConsumerAwareListenerErrorHa
 
     @Override
     public Object handleError(
-            @NotNull Message<?> message,
-            @NotNull ListenerExecutionFailedException exception,
-            @NotNull Consumer<?, ?> consumer) {
+            @NonNull Message<?> message,
+            @NonNull ListenerExecutionFailedException exception,
+            @NonNull Consumer<?, ?> consumer) {
         if(exception.getCause() instanceof MethodArgumentNotValidException manve) {
             List<Map<String ,String>> errors = manve.getBindingResult()
                     .getAllErrors().stream()
